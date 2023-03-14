@@ -1,0 +1,9 @@
+.header {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: $secondary-background-color;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}

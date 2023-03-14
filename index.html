@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link href="./css/main.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="section header">
+      <div class="container header-container">
+        <a class="link logo" href="#">
+          <svg class="logo-icon" width="53" height="36">
+            <use href="./pictures/sprite.svg#logo"></use>
+          </svg>
+          <p class="logo-text">Testtask</p>
+        </a>
+        <ul class="button-set list">
+          <li class="button-set-item">
+            <a class="link button" href="#">Users</a>
+          </li>
+          <li class="button-set-item">
+            <a class="link button" href="#">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="section hero">
+        <div class="container">
+          <h1 class="hero__title">Test assignment for front-end developer</h1>
+          <p class="hero__text">
+            What defines a good front-end developer is one that has skilled
+            knowledge of HTML, CSS, JS with a vast understanding of User design
+            thinking as they'll be building web interfaces with accessibility in
+            mind. They should also be excited to learn, as the world of
+            Front-End Development keeps evolving.
+          </p>
+          <a class="link button hero-button" href="#">Sign Up</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <h2>Working with GET request</h2>
+          <button class="button wide-button" type="button">Show more</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <h2>Working with POST request</h2>
+          <form action="">
+            <label>
+              <input type="text" placeholder="Your name" />
+            </label>
+            <label>
+              <input type="email" placeholder="Email" />
+            </label>
+            <label>
+              <input type="phone" placeholder="Phone" />
+            </label>
+            <p>Select your position</p>
+            <input
+              type="radio"
+              id="positionChoice1"
+              name="position"
+              value="Frontend developer"
+            />
+            <label for="contactChoice1">Frontend developer</label>
+            <input
+              type="radio"
+              id="positionChoice2"
+              name="position"
+              value="Backend developer"
+            />
+            <label for="contactChoice2">Backend developer</label>
+            <input
+              type="radio"
+              id="positionChoice3"
+              name="position"
+              value="Designer"
+            />
+            <label for="contactChoice3">Designer</label>
+            <input
+              type="radio"
+              id="positionChoice4"
+              name="position"
+              value="QA"
+            />
+            <label for="contactChoice4">QA</label>
+            <label for="avatar"></label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept="image/png, image/jpeg"
+              placeholder="Upload your photo"
+            />
+            <button class="link button" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

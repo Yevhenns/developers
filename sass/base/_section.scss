@@ -1,0 +1,13 @@
+.section {        
+    &__title {
+    //   color: $header-text-color;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.17;
+      margin-bottom: 30px;
+      @media screen and (min-width: 1200px) {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+    }
+  }
