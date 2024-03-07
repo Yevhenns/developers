@@ -1,0 +1,28 @@
+@import "../../styles/media.mixin.scss";
+
+.header {
+  background-color: white;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 16px;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    @include not-mobile {
+      padding: 17px 32px;
+    }
+    @include sm-desktop {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    @include lg-desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+}
