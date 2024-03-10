@@ -10,3 +10,17 @@ type Developer = {
 };
 
 type Developers = Developer[];
+
+type DevelopersResponse = {
+  count: number;
+  total_pages: number;
+  total_users: number;
+  users: Developers;
+};
+
+type Position = {
+  id: number;
+  name: string;
+};
+
+type Positions = Position[];

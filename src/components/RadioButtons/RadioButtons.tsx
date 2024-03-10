@@ -1,25 +1,21 @@
 import css from './RadioButtons.module.scss';
 
-export function RadioButtons() {
+export type RadioButtonsProps = {
+  positions: Positions;
+};
+
+export function RadioButtons({ positions }: RadioButtonsProps) {
   return (
     <div className={css.radioButtons}>
       <p>Select your position</p>
-      <label>
-        <input type="radio" value="option1" />
-        Frontend developer
-      </label>
-      <label>
-        <input type="radio" value="option2" />
-        Backend developer
-      </label>
-      <label>
-        <input type="radio" value="option3" />
-        Designer
-      </label>
-      <label>
-        <input type="radio" value="option4" />
-        QA
-      </label>
+      {positions.map(position => {
+        return (
+          <label key={position.id}>
+            <input type="radio" value={position.name} id={position.name} />
+            {position.name}
+          </label>
+        );
+      })}
     </div>
   );
 }
