@@ -15,7 +15,7 @@ export function SignUpForm({ positions }: SignUpFormProps) {
       <Input placeholder="Phone" name="phone" />
       <Input type="file" placeholder="Email" name="email" />
       <RadioButtons positions={positions} />
-      <Button label="Sign up" type="submit" />
+      <Button label="Sign up" type="submit" onClick={() => console.log('Sign up')} />
     </form>
   );
 }
