@@ -30,5 +30,5 @@ type NewDeveloper = {
   email: string;
   phone: string;
   photo: file;
-  position: string;
+  position_id: number;
 };

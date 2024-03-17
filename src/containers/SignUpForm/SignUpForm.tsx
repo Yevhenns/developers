@@ -2,8 +2,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { RadioButtonsWrapper } from '../RadioButtonsWrapper';
-import css from './SignUpForm.module.scss';
 import { RadioButtons } from '../../components/RadioButtons';
+import css from './SignUpForm.module.scss';
 
 export type SignUpFormProps = {
   positions: Positions;
@@ -12,15 +12,14 @@ export type SignUpFormProps = {
 export function SignUpForm({ positions }: SignUpFormProps) {
   const { register, handleSubmit, watch } = useForm<NewDeveloper>({ mode: 'onChange' });
 
-  const position = watch('position');
-  console.log(position);
+  const position = Number(watch('position_id'));
 
   const onSubmit: SubmitHandler<NewDeveloper> = data => {
-    const sendForm = {
+    const sendForm: NewDeveloper = {
       name: data.name,
       email: data.email,
       phone: data.phone,
-      position: position,
+      position_id: position,
       photo: data.photo,
     };
     console.log(sendForm);
@@ -40,10 +39,10 @@ export function SignUpForm({ positions }: SignUpFormProps) {
       />
       <RadioButtonsWrapper>
         <RadioButtons
-          {...register('position')}
+          {...register('position_id')}
           positions={positions}
-          name="position"
-          currentPosition={Number(position)}
+          name="position_id"
+          currentPosition={position}
         />
       </RadioButtonsWrapper>
       <Input {...register('photo')} type="file" id="photo" htmlFor="photo" />
