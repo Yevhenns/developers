@@ -15,7 +15,7 @@ export function DevelopersSection() {
   };
 
   useEffect(() => {
-    getDevelopers({ page }).then(items => {
+    getDevelopers(page).then(items => {
       if (items !== undefined) {
         setDevelopers(items.users);
         setTotalPages(items.total_pages);

@@ -32,3 +32,13 @@ type NewDeveloper = {
   photo: file;
   position_id: number;
 };
+
+type Token = {
+  success: boolean;
+  token: string;
+};
+
+type registerNewDeveloperProps = {
+  formData: NewDeveloper;
+  token: string;
+};

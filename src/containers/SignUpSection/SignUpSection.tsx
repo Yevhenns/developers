@@ -9,7 +9,7 @@ export function SignUpSection() {
 
   useEffect(() => {
     getPositions().then(items => {
-      setPositions(items);
+      if (items !== undefined) setPositions(items);
     });
   }, []);
 
