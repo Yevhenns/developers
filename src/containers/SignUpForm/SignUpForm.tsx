@@ -12,6 +12,9 @@ export type SignUpFormProps = {
 export function SignUpForm({ positions }: SignUpFormProps) {
   const { register, handleSubmit, watch } = useForm<NewDeveloper>({ mode: 'onChange' });
 
+  const position = watch('position');
+  console.log(position);
+
   const onSubmit: SubmitHandler<NewDeveloper> = data => {
     const sendForm = {
       name: data.name,
@@ -23,8 +26,6 @@ export function SignUpForm({ positions }: SignUpFormProps) {
     console.log(sendForm);
     // reset();
   };
-
-  const position = watch('position');
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +43,7 @@ export function SignUpForm({ positions }: SignUpFormProps) {
           {...register('position')}
           positions={positions}
           name="position"
-          currentPosition={position}
+          currentPosition={Number(position)}
         />
       </RadioButtonsWrapper>
       <Input {...register('photo')} type="file" id="photo" htmlFor="photo" />

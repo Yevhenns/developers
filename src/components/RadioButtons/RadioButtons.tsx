@@ -3,7 +3,7 @@ import css from './RadioButtons.module.scss';
 
 export type RadioButtonsProps = {
   positions: Positions;
-  currentPosition: string;
+  currentPosition: number;
 } & HTMLProps<HTMLInputElement>;
 
 export const RadioButtons: FC<PropsWithRef<RadioButtonsProps>> = forwardRef(
@@ -17,8 +17,8 @@ export const RadioButtons: FC<PropsWithRef<RadioButtonsProps>> = forwardRef(
                 name={props.name}
                 id={position.name}
                 type="radio"
-                value={position.name}
-                checked={currentPosition === position.name}
+                value={position.id}
+                checked={currentPosition === position.id}
                 {...props}
                 ref={ref}
               />
