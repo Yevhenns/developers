@@ -24,7 +24,7 @@ export function DevelopersSection() {
   }, [page]);
 
   return (
-    <section className={css.section}>
+    <section className={css.section} id="users">
       <Container>
         <h2>Working with GET request</h2>
         <DevelopersList developers={developers} />

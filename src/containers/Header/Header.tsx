@@ -8,8 +8,12 @@ export function Header() {
       <div className={css.wrapper}>
         <Logo />
         <nav>
-          <Button label="Users" onClick={() => console.log('Users')} />
-          <Button label="Sign up" onClick={() => console.log('Sign up')} />
+          <Button>
+            <a href="#users">Users</a>
+          </Button>
+          <Button>
+            <a href="#signup">Sign up</a>
+          </Button>
         </nav>
       </div>
     </header>

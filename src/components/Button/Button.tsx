@@ -1,16 +1,18 @@
-import { HTMLProps } from 'react';
+import { HTMLProps, ReactNode } from 'react';
 import css from './Button.module.scss';
 
 export type ButtonProps = {
   type?: 'button' | 'submit';
-  label: string;
+  label?: string;
+  children?: ReactNode;
   onClick?: () => void;
 } & HTMLProps<HTMLButtonElement>;
 
-export function Button({ type = 'button', label, onClick }: ButtonProps) {
+export function Button({ type = 'button', children, label, onClick }: ButtonProps) {
   return (
     <button type={type} className={css.button} onClick={onClick}>
       {label}
+      {children}
     </button>
   );
 }

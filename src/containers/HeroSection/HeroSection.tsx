@@ -12,7 +12,9 @@ export function HeroSection() {
           with accessibility in mind. They should also be excited to learn, as the world of
           Front-End Development keeps evolving.
         </p>
-        <Button label="Sign up" onClick={() => console.log('Sign up')} />
+        <Button>
+          <a href="#signup">Sign up</a>
+        </Button>
       </div>
     </section>
   );

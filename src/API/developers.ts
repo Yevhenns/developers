@@ -42,10 +42,6 @@ export const registerNewDeveloper = async ({ formData, token }: registerNewDevel
       },
       { headers: { Token: token, 'Content-Type': 'multipart/form-data' } }
     );
-    //   .then(res => {
-    //     console.log(res);
-    //   });
-    // console.log(response);
     return response;
   } catch (error) {
     console.error(error);

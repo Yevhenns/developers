@@ -21,7 +21,7 @@ export function SignUpSection() {
   }, []);
 
   return (
-    <section className={css.section}>
+    <section className={css.section} id="signup">
       <Container>
         <h2>Working with POST request</h2>
         <SignUpForm positions={positions} token={token} />
