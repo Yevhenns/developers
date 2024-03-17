@@ -4,7 +4,7 @@ import css from './Button.module.scss';
 export type ButtonProps = {
   type?: 'button' | 'submit';
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
 } & HTMLProps<HTMLButtonElement>;
 
 export function Button({ type = 'button', label, onClick }: ButtonProps) {

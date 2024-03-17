@@ -9,7 +9,6 @@ type getDevelopersProps = {
 export const getDevelopers = async ({ page }: getDevelopersProps) => {
   try {
     const response = await axios.get(`/users?page=${page}&count=6`);
-    console.log(response.data);
     return response.data as DevelopersResponse;
   } catch (error) {
     console.error(error);

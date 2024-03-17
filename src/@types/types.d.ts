@@ -24,3 +24,11 @@ type Position = {
 };
 
 type Positions = Position[];
+
+type NewDeveloper = {
+  name: string;
+  email: string;
+  phone: string;
+  photo: file;
+  position: string;
+};
