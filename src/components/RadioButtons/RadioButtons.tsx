@@ -1,4 +1,4 @@
-import { FC, HTMLProps, PropsWithRef, forwardRef } from 'react';
+import { FC, HTMLProps, forwardRef } from 'react';
 import css from './RadioButtons.module.scss';
 
 export type RadioButtonsProps = {
@@ -6,7 +6,7 @@ export type RadioButtonsProps = {
   currentPosition: number;
 } & HTMLProps<HTMLInputElement>;
 
-export const RadioButtons: FC<PropsWithRef<RadioButtonsProps>> = forwardRef(
+export const RadioButtons: FC<RadioButtonsProps> = forwardRef(
   ({ positions, currentPosition, ...props }, ref) => {
     return (
       <div className={css.radioButtons}>
