@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { getToken, registerNewDeveloper } from '../../API/developers';
+import { registerNewDeveloper } from '../../API/developers';
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { RadioButtonsWrapper } from '../RadioButtonsWrapper';
@@ -9,11 +8,10 @@ import css from './SignUpForm.module.scss';
 
 export type SignUpFormProps = {
   positions: Positions;
+  token: string;
 };
 
-export function SignUpForm({ positions }: SignUpFormProps) {
-  const [token, setToken] = useState('');
-
+export function SignUpForm({ positions, token }: SignUpFormProps) {
   const { register, handleSubmit, reset, watch } = useForm<NewDeveloper>({ mode: 'onChange' });
 
   const position = Number(watch('position_id'));
@@ -26,19 +24,11 @@ export function SignUpForm({ positions }: SignUpFormProps) {
       position_id: position,
       photo: data.photo,
     };
-
     registerNewDeveloper({ formData, token }).then(response => {
-      console.log(response);
       return response?.status;
     });
     reset();
   };
-
-  useEffect(() => {
-    getToken().then(token => {
-      if (token !== undefined) setToken(token.token);
-    });
-  }, []);
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
