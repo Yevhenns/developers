@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react';
-import { getPositions, getToken } from '../../API/developers';
+import { getPositions, getToken, registerNewDeveloper } from '../../API/developers';
 import { Container } from '../../components/Container';
 import { SignUpForm } from '../SignUpForm';
 import css from './SignUpSection.module.scss';
+import { Success } from '../../components/SuccessSection';
 
 export function SignUpSection() {
   const [positions, setPositions] = useState<Positions | []>([]);
   const [token, setToken] = useState('');
+  const [resStatus, setResStatus] = useState<null | number>(null);
+
+  const submitForm = (formData: NewDeveloper) => {
+    registerNewDeveloper({ formData, token }).then(response => {
+      if (response) setResStatus(response?.status);
+    });
+  };
 
   useEffect(() => {
     getPositions().then(items => {
@@ -24,7 +32,8 @@ export function SignUpSection() {
     <section className={css.section} id="signup">
       <Container>
         <h2>Working with POST request</h2>
-        <SignUpForm positions={positions} token={token} />
+        <SignUpForm positions={positions} submitForm={submitForm} />
+        {resStatus === 201 && <Success />}
       </Container>
     </section>
   );

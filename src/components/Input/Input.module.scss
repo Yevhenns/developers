@@ -1,5 +1,7 @@
 .fieldset {
   text-align: left;
+  display: flex;
+  flex-direction: column;
   .input {
     display: flex;
     border-radius: 4px;
@@ -7,5 +9,8 @@
     border: 1px solid #d0cfcf;
     width: 100%;
     box-sizing: border-box;
+  }
+  .errorMessage {
+    color: red;
   }
 }

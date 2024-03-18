@@ -4,10 +4,11 @@ import css from './RadioButtons.module.scss';
 export type RadioButtonsProps = {
   positions: Positions;
   currentPosition: number;
+  error?: string;
 } & HTMLProps<HTMLInputElement>;
 
 export const RadioButtons: FC<RadioButtonsProps> = forwardRef(
-  ({ positions, currentPosition, ...props }, ref) => {
+  ({ positions, currentPosition, error, ...props }, ref) => {
     return (
       <div className={css.radioButtons}>
         {positions.map(position => {
@@ -26,6 +27,7 @@ export const RadioButtons: FC<RadioButtonsProps> = forwardRef(
             </label>
           );
         })}
+        {error && <span className={css.errorMessage}>{error}</span>}
       </div>
     );
   }
