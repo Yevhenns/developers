@@ -5,7 +5,7 @@ import { DevelopersList } from '../DevelopersList';
 import { getDevelopers } from '../../API/developers';
 import css from './DevelopersSection.module.scss';
 
-export function DevelopersSection() {
+export function DevelopersSection({ developersRef }) {
   const [developers, setDevelopers] = useState<Developers | []>([]);
   const [totalPages, setTotalPages] = useState<null | number>(null);
   const [page, setPage] = useState(1);
@@ -24,7 +24,7 @@ export function DevelopersSection() {
   }, [page]);
 
   return (
-    <section className={css.section} id="users">
+    <section className={css.section} ref={developersRef}>
       <Container>
         <h2>Working with GET request</h2>
         <DevelopersList developers={developers} />

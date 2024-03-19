@@ -5,7 +5,7 @@ import { SignUpForm } from '../SignUpForm';
 import css from './SignUpSection.module.scss';
 import { Success } from '../../components/SuccessSection';
 
-export function SignUpSection() {
+export function SignUpSection({ signUpRef }) {
   const [positions, setPositions] = useState<Positions | []>([]);
   const [token, setToken] = useState('');
   const [resStatus, setResStatus] = useState<null | number>(null);
@@ -29,7 +29,7 @@ export function SignUpSection() {
   }, []);
 
   return (
-    <section className={css.section} id="signup">
+    <section className={css.section} ref={signUpRef}>
       <Container>
         <h2>Working with POST request</h2>
         <SignUpForm positions={positions} submitForm={submitForm} />
