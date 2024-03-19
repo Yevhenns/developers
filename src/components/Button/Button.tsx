@@ -8,9 +8,9 @@ export type ButtonProps = {
   onClick?: () => void;
 } & HTMLProps<HTMLButtonElement>;
 
-export function Button({ type = 'button', children, label, onClick }: ButtonProps) {
+export function Button({ type = 'button', children, label, onClick, ...props }: ButtonProps) {
   return (
-    <button type={type} className={css.button} onClick={onClick}>
+    <button type={type} className={css.button} onClick={onClick} {...props}>
       {label}
       {children}
     </button>

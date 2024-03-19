@@ -16,7 +16,7 @@ export function SignUpForm({ positions, submitForm }: SignUpFormProps) {
     handleSubmit,
     reset,
     watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<NewDeveloper>({ mode: 'onChange' });
 
   const position = Number(watch('position_id'));
@@ -87,7 +87,7 @@ export function SignUpForm({ positions, submitForm }: SignUpFormProps) {
         htmlFor="photo"
         error={errors.photo?.message?.toString()}
       />
-      <Button label="Sign up" type="submit" />
+      <Button label="Sign up" type="submit" disabled={!isValid} />
     </form>
   );
 }
