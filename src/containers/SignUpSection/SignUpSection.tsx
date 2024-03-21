@@ -3,9 +3,10 @@ import { getPositions, getToken, registerNewDeveloper } from '../../API/develope
 import { Container } from '../../components/Container';
 import { SignUpForm } from '../SignUpForm';
 import css from './SignUpSection.module.scss';
-import { Success } from '../../components/SuccessSection';
+import { Success } from '../../components/Success';
 
-export function SignUpSection({ signUpRef }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function SignUpSection({ signUpRef }: any) {
   const [positions, setPositions] = useState<Positions | []>([]);
   const [token, setToken] = useState('');
   const [resStatus, setResStatus] = useState<null | number>(null);
