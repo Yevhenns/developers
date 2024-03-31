@@ -21,11 +21,11 @@ export const useGetDevelopers = () => {
       }
     });
     if (resStatus === 201) {
-      getDevelopers(1).then(items => {
+      setPage(1);
+      getDevelopers(page).then(items => {
         if (items !== undefined) {
           setDevelopers(items.users);
           setTotalPages(items.total_pages);
-          setPage(1);
         }
       });
     }
