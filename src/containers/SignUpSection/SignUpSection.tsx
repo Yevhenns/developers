@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import { getPositions, getToken, registerNewDeveloper } from '../../API/developers';
 import { Container } from '../../components/Container';
 import { SignUpForm } from '../SignUpForm';
-import css from './SignUpSection.module.scss';
 import { Success } from '../../components/Success';
+import css from './SignUpSection.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function SignUpSection({ signUpRef }: any) {
+type SignUpSectionProps = {
+  signUpRef: RefObject<HTMLDivElement>;
+};
+
+export function SignUpSection({ signUpRef }: SignUpSectionProps) {
   const [positions, setPositions] = useState<Positions | []>([]);
   const [token, setToken] = useState('');
   const [resStatus, setResStatus] = useState<null | number>(null);

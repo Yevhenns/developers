@@ -1,10 +1,15 @@
+import { RefObject } from 'react';
 import { Button } from '../../components/Button';
 import { Logo } from '../../components/Logo';
 import { handleScroll } from '../../helpers';
 import css from './Header.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Header({ developersRef, signUpRef }: any) {
+type HeaderProps = {
+  developersRef: RefObject<HTMLDivElement>;
+  signUpRef: RefObject<HTMLDivElement>;
+};
+
+export function Header({ developersRef, signUpRef }: HeaderProps) {
   return (
     <header className={css.header}>
       <div className={css.wrapper}>

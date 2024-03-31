@@ -5,8 +5,9 @@ import { HeroSection } from './containers/HeroSection';
 import { SignUpSection } from './containers/SignUpSection';
 
 export function App() {
-  const developersRef = useRef(null);
-  const signUpRef = useRef(null);
+  const developersRef = useRef<HTMLDivElement>(null);
+  const signUpRef = useRef<HTMLDivElement>(null);
+  console.log(typeof signUpRef.current);
 
   return (
     <>

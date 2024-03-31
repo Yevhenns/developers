@@ -1,7 +1,9 @@
-export const handleScroll = (ref: { offsetTop: number }) => {
-  window.scrollTo({
-    top: ref.offsetTop,
-    left: 0,
-    behavior: 'smooth',
-  });
+export const handleScroll = (ref: HTMLDivElement | null) => {
+  if (ref !== null) {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 };

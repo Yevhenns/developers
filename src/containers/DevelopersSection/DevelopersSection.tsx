@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { DevelopersList } from '../DevelopersList';
 import { getDevelopers } from '../../API/developers';
 import css from './DevelopersSection.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function DevelopersSection({ developersRef }: any) {
+type DevelopersSectionProps = {
+  developersRef: RefObject<HTMLDivElement>;
+};
+
+export function DevelopersSection({ developersRef }: DevelopersSectionProps) {
   const [developers, setDevelopers] = useState<Developers | []>([]);
   const [totalPages, setTotalPages] = useState<null | number>(null);
   const [page, setPage] = useState(1);

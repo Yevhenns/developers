@@ -1,9 +1,13 @@
+import { RefObject } from 'react';
 import { Button } from '../../components/Button';
 import { handleScroll } from '../../helpers';
 import css from './HeroSection.module.scss';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function HeroSection({ signUpRef }: any) {
+type HeroSectionProps = {
+  signUpRef: RefObject<HTMLDivElement>;
+};
+
+export function HeroSection({ signUpRef }: HeroSectionProps) {
   return (
     <section className={css.hero}>
       <div className={css.wrapper}>
