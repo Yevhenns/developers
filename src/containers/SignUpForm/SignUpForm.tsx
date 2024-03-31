@@ -8,14 +8,12 @@ import css from './SignUpForm.module.scss';
 export type SignUpFormProps = {
   positions: Positions;
   submitForm: (formData: NewDeveloper) => void;
-  resStatus: number | null;
 };
 
-export function SignUpForm({ positions, submitForm, resStatus }: SignUpFormProps) {
+export function SignUpForm({ positions, submitForm }: SignUpFormProps) {
   const {
     register,
     handleSubmit,
-    reset,
     watch,
     formState: { errors, isValid },
   } = useForm<NewDeveloper>({ mode: 'onChange' });
@@ -31,9 +29,6 @@ export function SignUpForm({ positions, submitForm, resStatus }: SignUpFormProps
       photo: data.photo,
     };
     submitForm(formData);
-    if (resStatus === 201) {
-      reset();
-    }
   };
 
   return (
