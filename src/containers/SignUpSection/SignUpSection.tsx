@@ -36,7 +36,7 @@ export function SignUpSection({ signUpRef }: SignUpSectionProps) {
     <section className={css.section} ref={signUpRef}>
       <Container>
         <h2>Working with POST request</h2>
-        <SignUpForm positions={positions} submitForm={submitForm} />
+        <SignUpForm positions={positions} submitForm={submitForm} resStatus={resStatus} />
         {resStatus === 201 && <Success />}
       </Container>
     </section>

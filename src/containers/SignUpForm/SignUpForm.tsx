@@ -8,9 +8,10 @@ import css from './SignUpForm.module.scss';
 export type SignUpFormProps = {
   positions: Positions;
   submitForm: (formData: NewDeveloper) => void;
+  resStatus: number | null;
 };
 
-export function SignUpForm({ positions, submitForm }: SignUpFormProps) {
+export function SignUpForm({ positions, submitForm, resStatus }: SignUpFormProps) {
   const {
     register,
     handleSubmit,
@@ -30,7 +31,9 @@ export function SignUpForm({ positions, submitForm }: SignUpFormProps) {
       photo: data.photo,
     };
     submitForm(formData);
-    reset();
+    if (resStatus === 201) {
+      reset();
+    }
   };
 
   return (

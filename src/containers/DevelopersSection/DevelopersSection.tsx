@@ -1,31 +1,16 @@
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject } from 'react';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { DevelopersList } from '../DevelopersList';
-import { getDevelopers } from '../../API/developers';
 import css from './DevelopersSection.module.scss';
+import { useGetDevelopers } from '../../hooks/useGetDevelopers';
 
 type DevelopersSectionProps = {
   developersRef: RefObject<HTMLDivElement>;
 };
 
 export function DevelopersSection({ developersRef }: DevelopersSectionProps) {
-  const [developers, setDevelopers] = useState<Developers | []>([]);
-  const [totalPages, setTotalPages] = useState<null | number>(null);
-  const [page, setPage] = useState(1);
-
-  const showMore = () => {
-    setPage(page + 1);
-  };
-
-  useEffect(() => {
-    getDevelopers(page).then(items => {
-      if (items !== undefined) {
-        setDevelopers(items.users);
-        setTotalPages(items.total_pages);
-      }
-    });
-  }, [page]);
+  const { developers, page, showMore, totalPages } = useGetDevelopers();
 
   return (
     <section className={css.section} ref={developersRef}>
