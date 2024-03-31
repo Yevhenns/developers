@@ -5,12 +5,11 @@ export type ButtonProps = {
   type?: 'button' | 'submit';
   label?: string;
   children?: ReactNode;
-  onClick?: () => void;
 } & HTMLProps<HTMLButtonElement>;
 
-export function Button({ type = 'button', label, onClick, ...props }: ButtonProps) {
+export function Button({ type = 'button', label, ...props }: ButtonProps) {
   return (
-    <button type={type} className={css.button} onClick={onClick} {...props}>
+    <button type={type} className={css.button} {...props}>
       {label}
     </button>
   );
