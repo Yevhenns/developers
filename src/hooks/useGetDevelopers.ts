@@ -25,6 +25,7 @@ export const useGetDevelopers = () => {
         if (items !== undefined) {
           setDevelopers(items.users);
           setTotalPages(items.total_pages);
+          setPage(1);
         }
       });
     }
