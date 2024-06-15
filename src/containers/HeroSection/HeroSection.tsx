@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 import { Button } from '../../components/Button';
-import { handleScroll } from '../../helpers';
+import { handleScroll } from '../../helpers/handleScroll';
 import css from './HeroSection.module.scss';
 
 type HeroSectionProps = {

@@ -1,3 +1,4 @@
+import { stringSlice } from '../../helpers/stringSlice';
 import css from './DeveloperCard.module.scss';
 
 type DeveloperCardProps = {
@@ -6,13 +7,17 @@ type DeveloperCardProps = {
 
 export function DeveloperCard({ developer }: DeveloperCardProps) {
   const { photo, name, position, email, phone } = developer;
+
+  const nameCheckedLength = stringSlice(name);
+  const emailCheckedLength = stringSlice(email);
+
   return (
     <div className={css.card}>
       <img src={photo} width={70} height={70} alt="developer image" />
-      <p>{name}</p>
+      <p>{nameCheckedLength}</p>
       <div>
         <p>{position}</p>
-        <p>{email}</p>
+        <p>{emailCheckedLength}</p>
         <p>{phone}</p>
       </div>
     </div>

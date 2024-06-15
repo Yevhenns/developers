@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import { Button } from '../../components/Button';
 import { Logo } from '../../components/Logo';
-import { handleScroll } from '../../helpers';
+import { handleScroll } from '../../helpers/handleScroll';
 import css from './Header.module.scss';
 
 type HeaderProps = {
