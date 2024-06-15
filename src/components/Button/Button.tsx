@@ -6,9 +6,9 @@ export type ButtonProps = {
   label?: string;
 } & HTMLProps<HTMLButtonElement>;
 
-export function Button({ type = 'button', label, ...props }: ButtonProps) {
+export function Button({ type = 'button', label, disabled, ...props }: ButtonProps) {
   return (
-    <button type={type} className={css.button} {...props}>
+    <button type={type} className={[css.button, disabled && css.disabled].join(' ')} disabled={disabled} {...props}>
       {label}
     </button>
   );

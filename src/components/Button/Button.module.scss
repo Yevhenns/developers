@@ -9,10 +9,20 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms linear;
+
   &:hover {
     background-color: #ffe302;
   }
+
   &:active {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+  }
+
+  &.disabled {
+    cursor: default;
+    filter: none;
+    background-color: #b4b4b4;
+    color: #ffffff;
   }
 }

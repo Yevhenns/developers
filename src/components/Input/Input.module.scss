@@ -2,6 +2,13 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+
+  &.error {
+    input {
+      border: 1px solid red;
+    }
+  }
+
   .input {
     display: flex;
     border-radius: 4px;
@@ -10,17 +17,22 @@
     width: 100%;
     box-sizing: border-box;
   }
+
   .errorMessage {
     color: red;
   }
+
   .upload {
     border: 1px solid #d0cfcf;
     border-radius: 4px;
     color: #7e7e7e;
+    cursor: pointer;
   }
+
   .upload::file-selector-button {
     padding: 20px;
     border: 1px solid #000000;
     border-radius: 4px;
+    cursor: pointer;
   }
 }

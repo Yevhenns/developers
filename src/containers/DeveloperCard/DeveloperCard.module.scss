@@ -7,6 +7,12 @@
   max-width: 370px;
   align-items: center;
   border-radius: 10px;
+  transition: scale 250ms linear;
+
+  &:hover {
+    scale: 1.1;
+  }
+
   img {
     border-radius: 50%;
   }

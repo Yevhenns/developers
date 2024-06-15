@@ -8,7 +8,7 @@ export type InputProps = {
 
 export const Input: FC<InputProps> = forwardRef(({ type, error, ...props }, ref) => {
   return (
-    <div className={css.fieldset}>
+    <div className={[css.fieldset, error && css.error].join(' ')}>
       {type === 'file' ? (
         <input className={css.upload} type={type} {...props} ref={ref} />
       ) : (

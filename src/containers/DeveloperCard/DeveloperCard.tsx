@@ -12,7 +12,7 @@ export function DeveloperCard({ developer }: DeveloperCardProps) {
   const emailCheckedLength = stringSlice(email);
 
   return (
-    <div className={css.card}>
+    <a className={css.card} href="#">
       <img src={photo} width={70} height={70} alt="developer image" />
       <p>{nameCheckedLength}</p>
       <div>
@@ -20,6 +20,6 @@ export function DeveloperCard({ developer }: DeveloperCardProps) {
         <p>{emailCheckedLength}</p>
         <p>{phone}</p>
       </div>
-    </div>
+    </a>
   );
 }
