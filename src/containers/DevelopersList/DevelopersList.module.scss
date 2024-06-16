@@ -5,9 +5,11 @@
   gap: 20px;
   padding-top: 50px;
   padding-bottom: 50px;
+
   @include tablet {
     grid-template-columns: 1fr 1fr;
   }
+
   @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
   }

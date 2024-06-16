@@ -4,16 +4,19 @@
   padding: 0 16px;
   margin-left: auto;
   margin-right: auto;
+
   @include tablet {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
+
   @include sm-desktop {
     width: 1024px;
     padding-left: 60px;
     padding-right: 60px;
   }
+
   @include lg-desktop {
     width: 1170px;
     padding: 0;

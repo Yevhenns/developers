@@ -2,8 +2,8 @@ import { RefObject } from 'react';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { DevelopersList } from '../DevelopersList';
-import css from './DevelopersSection.module.scss';
 import { useGetDevelopers } from '../../hooks/useGetDevelopers';
+import css from './DevelopersSection.module.scss';
 
 type DevelopersSectionProps = {
   developersRef: RefObject<HTMLDivElement>;
