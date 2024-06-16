@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button';
 import css from './DeveloperModal.module.scss';
 
 type DeveloperCardProps = {
@@ -18,7 +19,7 @@ export function DeveloperModal({ developer, toggleModal }: DeveloperCardProps) {
           <p>{email}</p>
           <p>{phone}</p>
         </div>
-        <button onClick={toggleModal}>X</button>
+        <Button label="X" onClick={toggleModal} />
       </div>
     </div>
   );
